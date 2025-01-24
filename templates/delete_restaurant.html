@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+
+{%block content%}
+   <form action=/delete_restaurant/{{Id}} method="POST">
+     <input type="hidden" name = "Id" value= "{{Id}}">
+     <h2>Do you want delete this Restaurant Data?</h2>
+     <input type="submit" value = "confirm delete restaurant">
+   </form>
+
+{%endblock%}

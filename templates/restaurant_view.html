@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Restaurants</h1>
+       <table>
+           <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Action</th>
+           </tr>
+           {%for row in restaurants%}
+           <tr>
+               <td>{{row.0}}</td>
+               <td>{{row.1}}</td>
+               <td>{{row.2}}</td>
+               <td>{{row.3}}</td>
+               
+               <td>
+                   <a href="/update_restaurant/{{row.0}}">Edit</a>
+                   <a href="/delete_restaurant/{{row.0}}">Delete</a>
+                   <a href="/check_review/{{row.0}}">Check Reviews</a>
+               </td>
+
+           </tr>
+           {%endfor%}
+       </table>
+        
+<h1>Add a Restaurant</h1>
+       <form method="POST" action="/insert_restaurant">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Name"><br><br>
+
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" placeholder="Address"><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="phone"><br>
+
+            <input type="hidden" id="admin_id" name="admin_id" value="{{admin_id}}" placeholder="admin_id"><br>
+
+            <input type="submit" value="Add">
+          
+       </form>
+{%endblock%}

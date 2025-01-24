@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block content%}
+<form action=/update_review/{{Id}} method="POST">
+    <input type="hidden" name = "Id" value= "{{Id}}">
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" value= "{{name}}" placeholder="Name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" value= "{{email}}" placeholder="Email"><br><br>
+
+    <label for="age">Age:</label><br>
+    <input type="text" id="age" name="age" value= "{{age}}" placeholder="Age"><br><br>
+
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" value= "{{address}}" placeholder="Address"><br><br>
+
+    <label for="rating">Rating:</label><br>
+    <input type="text" id="rating" name="rating" value= "{{rating}}"placeholder="Rating"><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea name="description" id="description" rows="10" cols="30" placeholder="write your review">{{description}}</textarea><br><br>
+      
+    <input type="submit" value="Update Your Review">
+  
+</form>
+{%endblock%}
+

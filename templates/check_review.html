@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Let's Check Our Reviews</h1>
+       <table>
+           <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Description</th>
+            <th>Review_id</th>
+            <th>Action</th>
+           </tr>
+           {%for row in reviews%}
+           <tr>
+               <td>{{row.0}}</td>
+               <td>{{row.1}}</td>
+               <td>{{row.2}}</td>
+               <td>{{row.3}}</td>
+               <td>{{row.4}}</td>
+               <td>{{row.5}}</td>
+               <td>{{row.6}}</td>
+               <td>{{row.7}}</td>
+               <td>
+                   <a href="/update_review/{{row.0}}">Edit Review</a>
+                   <a href="/delete_review/{{row.0}}">Delete Review</a>
+               </td>
+
+           </tr>
+           {%endfor%}
+       </table>
+        
+<h1>Share Your Review</h1>
+       <form method="POST" action="/insert_review">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Name"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="Email"><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" placeholder="Age"><br><br>
+
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" placeholder="Address"><br><br>
+
+            <label for="rating">Rating:</label><br>
+            <input type="text" id="rating" name="rating" placeholder="Rating"><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea name="description" id="description" rows="10" cols="30" placeholder="write your review"></textarea><br><br>
+
+            <input type="hidden" id="review_id" name="review_id" value= "{{Id}}" placeholder="review_id"><br><br>
+
+            <input type="hidden" id="user_id" name="user_id" value= "{{user_id}}" placeholder="user_id"><br><br>
+ 
+            <input type="submit" value="Submit Your Review">
+          
+       </form>
+
+      
+{%endblock%}

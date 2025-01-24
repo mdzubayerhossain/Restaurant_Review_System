@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }} - Review</title>
+    {% else %}
+    <title>Restaurant Reviews BD</title>
+    {% endif %}
+<style>
+ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  border: 35px;
+  overflow: hidden;
+  background-color: black;
+}
+            
+li{
+    float: left;
+
+}
+
+li a{
+    font-size: 20;
+    display: block;
+    color: white;
+    text-align:center;
+    padding: 20px;
+    text-decoration: none;
+}
+            
+li a:hover{
+    background-color:gray
+ }
+</style>
+   
+</head>
+<body>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/user_signup">User Signup</a></li>
+        <li><a href="/user_login">User Login</a></li>
+        <li><a href="/admin_signup">Admin Signup</a></li>
+        <li><a href="/admin_login">Admin Login</a></li>
+        <li><a href="/logout">Log Out</a></li>
+    </ul>
+    {%block content%} {%endblock%}
+</body>
+</html>

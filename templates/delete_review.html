@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+
+{%block content%}
+   <form action=/delete_review/{{Id}} method="POST">
+     <input type="hidden" name = "Id" value= "{{Id}}">
+     <h2>Do you want delete your review?</h2>
+     <input type="submit" value = "confirm delete">
+   </form>
+
+{%endblock%}

@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Restaurants</h1>
+       <table>
+           <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Action</th>
+           </tr>
+           {%for row in restaurants%}
+           <tr>
+               <td>{{row.0}}</td>
+               <td>{{row.1}}</td>
+               <td>{{row.2}}</td>
+               <td>{{row.3}}</td>
+               <td>
+                   <a href="/check_review/{{row.0}}">Check Reviews</a>
+               </td>
+
+           </tr>
+           {%endfor%}
+       </table>
+        
+
+{%endblock%}
