@@ -1,40 +1,56 @@
+# Flask Restaurant Review System
 
-**Flask Restaurant Review Application**
-
-This Flask application is a restaurant review system that allows users to sign up, log in, view restaurants, and write reviews. It also allows admins to manage restaurants and reviews.
+This Flask application is a web application for managing restaurants and reviews. 
 
 **Features:**
 
-* User Signup and Login
-* Admin Signup and Login
-* View Restaurants (for both users and admins)
-* Insert Reviews (for users)
-* Delete Reviews (by users who wrote them)
-* Update Reviews (by users who wrote them)
-* View Reviews (for admins and users who wrote them)
-* Insert Restaurants (for admins)
-* Delete Restaurants (by admins who created them)
-* Update Restaurants (by admins who created them)
+* **User Management:**
+    * User Registration
+    * User Login 
+    * User Logout
 
-**Dependencies:**
+* **Restaurant Management (Admin):**
+    * View all restaurants
+    * Add new restaurants
+    * Edit existing restaurants
+    * Delete restaurants
 
-* Flask
-* Flask-MySQL
-* bcrypt
+* **Review Management:**
+    * View restaurant reviews
+    * Add reviews for restaurants
+    * Edit reviews (by the user who wrote them)
+    * Delete reviews (by the user who wrote them)
+
+**Technologies:**
+
+* **Python:** The primary programming language.
+* **Flask:** The web framework used to build the application.
+* **Flask-MySQL:** For interacting with the MySQL database.
+* **bcrypt:** For password hashing and security.
+* **HTML, CSS, JavaScript:** For frontend presentation.
 
 **Installation:**
 
-1. Clone this repository.
-2. Create a virtual environment and activate it.
-3. Install the required dependencies:
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/mdzubayerhossain/Restaurant_Review_System.git
+
+2. **Create a Virtual Environment (Recommended):**
+    ```bash
+    python3 -m venv venv 
+    source venv/bin/activate  # On Linux/macOS
+    .\venv\Scripts\activate  # On Windows
+  Configure Database:
+
+**3. Create a MySQL database.**
+Update app.config in app.py with your database credentials:
+  ```bash
+    app.config['MYSQL_HOST'] = 'your_host' 
+    app.config['MYSQL_USER'] = 'your_user' 
+    app.config['MYSQL_PASSWORD'] = 'your_password' 
+    app.config['MYSQL_DB'] = 'your_database_name'
 
 
 
-4. Create a MySQL database and configure the connection details in the `app.config` dictionary in the Flask application file (`app.py`).
-
-**Running the application:**
-
-1. Start the Flask development server:
-
-```bash
-python app.py
+**Run the Application:**
+  python app.py 
